@@ -1,11 +1,14 @@
-// document.querySelector('.container').appendChild(div)
+const userSize = prompt("Input your grid size, the maximum is 100")
+const heightWidth = Number(userSize)
+
 const container = document.querySelector('.container')
 
 let div
-let heightWidth = 16
 const num = heightWidth * heightWidth
 for (i = 0; i < num; i++) {
   div = document.createElement('div')
+  container.style.gridColumn = `repeat(${heightWidth}, 1fr)`
+  // container.style.gridTemplateRow = `repeat(${heightWidth}, 1fr)`
   container.appendChild(div)
   div.classList.add('grid-item')
 }
@@ -17,3 +20,4 @@ const changeColor = function () {
 
 const gridItems = document.querySelectorAll('.grid-item')
 gridItems.forEach(item => item.addEventListener('mouseover', changeColor))
+
