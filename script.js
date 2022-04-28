@@ -7,15 +7,18 @@ let div
 const num = heightWidth * heightWidth
 for (i = 0; i < num; i++) {
   div = document.createElement('div')
-  container.style.gridColumn = `repeat(${heightWidth}, 1fr)`
-  // container.style.gridTemplateRow = `repeat(${heightWidth}, 1fr)`
+  container.style.gridTemplateColumns = `repeat(${heightWidth}, 1fr)`
+  container.style.gridTemplateRows = `repeat(${heightWidth}, 1fr)`
   container.appendChild(div)
   div.classList.add('grid-item')
 }
 
+const randRGB = function () {
+  return Math.random() * 255
+}
+
 const changeColor = function () {
-  // this.classList.add('hovered')
-  this.style.background = "green"
+  this.style.background = `rgb(${randRGB()}, ${randRGB()}, ${randRGB()})`
 }
 
 const gridItems = document.querySelectorAll('.grid-item')
