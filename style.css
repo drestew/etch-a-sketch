@@ -4,14 +4,33 @@
 
 .container {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    height: 20rem;
-    width: 30rem;
+    height: 40rem;
+    width: 60rem;
     border: 1px solid blue;
 }
 
 .grid-item {
     border: 1px red solid;
     background-color: brown;
+}
+
+#slider {
+    -webkit-appearance: none;
+    width: 20rem;
+    height: 2rem;
+    background-color: rgb(94, 255, 0);
+    border-radius: 2rem;
+
+}
+
+#slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: red;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
 }
