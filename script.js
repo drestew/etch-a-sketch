@@ -1,6 +1,6 @@
-const userSize = prompt("Input your grid size, the maximum is 100")
-const heightWidth = Number(userSize)
-
+// const userSize = prompt("Input your grid size, the maximum is 100")
+// const heightWidth = Number(userSize)
+const heightWidth = 16
 const container = document.querySelector('.container')
 
 let div
