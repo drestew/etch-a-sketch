@@ -26,7 +26,15 @@ const randRGB = function () {
 }
 
 const changeColor = function () {
-  this.style.background = `rgb(${randRGB()}, ${randRGB()}, ${randRGB()})`
+  // manual color selection
+  if (colorPicker.getAttribute('data-current-color') !== 'FFFFFF') {
+    const newColor = colorPicker.getAttribute('data-current-color')
+    console.log(newColor, colorPicker.getAttribute('data-current-color'))
+    this.style.background = `${newColor}`
+  } else {
+    // random color
+    this.style.background = `rgb(${randRGB()}, ${randRGB()}, ${randRGB()})`
+  }
 }
 
 const addGridEvents = function () {
@@ -40,3 +48,8 @@ slider.addEventListener('mouseup', function () {
   createGrid(this.value)
 })
 createGrid(50)
+
+const colorPicker = document.querySelector('#color-picker')
+
+jscolor.install()
+colorPicker.jscolor.onChange = addGridEvents
