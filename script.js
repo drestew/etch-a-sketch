@@ -1,5 +1,6 @@
 const slider = document.querySelector('#slider')
 const screen = document.querySelector('.screen')
+const rainbow = document.querySelector('.rainbow-container')
 
 let div
 const createGrid = function (size) {
@@ -26,14 +27,13 @@ const randRGB = function () {
 
 const changeColor = function () {
   colorPicker.jscolor.hide()
-  // manual color selection
-  if (colorPicker.getAttribute('data-current-color') !== 'FFFFFF') {
+  if (!rainbow.classList.contains('active')) {
     const newColor = colorPicker.getAttribute('data-current-color')
     this.style.background = `${newColor}`
-    colorPicker.jscolor.value = 'FFAFFA'
   } else {
     // random color
     this.style.background = `rgb(${randRGB()}, ${randRGB()}, ${randRGB()})`
+    colorPicker.setAttribute('data-current-color') === 'FFFFFF'
   }
 }
 
@@ -54,3 +54,12 @@ const colorPicker = document.querySelector('#color-picker')
 
 jscolor.install()
 colorPicker.jscolor.onChange = addGridEvents
+
+const sliderToggle = function () {
+  this.classList.toggle('active')
+  if (this.classList.includes('active')) {
+
+  }
+}
+
+rainbow.addEventListener('click', sliderToggle)
