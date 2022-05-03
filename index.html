@@ -7,12 +7,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <script src="jscolor.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.8/jscolor.min.js"></script>
   </head>
   <body>
-    <div class="container"></div>
-    <div class="slider-container">
-      <input type="range" id="slider" min="2" max="100" step="2" />
+    <div class="container">
+      <div class="screen"></div>
+      <div class="controls">
+        <div class="knob"></div>
+        <div class="slider-container">
+          <input type="range" id="slider" min="2" max="100" step="2" />
+        </div>
+        <button id="color-picker" data-jscolor="">Change Color</button>
+        <button id="clear">Clear</button>
+        <div id="rainbow-container">
+          <div id="rainbow-toggle"></div>
+        </div>
+        <div class="knob"></div>
+      </div>
     </div>
   </body>
 </html>

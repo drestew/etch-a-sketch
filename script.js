@@ -1,22 +1,21 @@
 const slider = document.querySelector('#slider')
-const container = document.querySelector('.container')
+const screen = document.querySelector('.screen')
 
 let div
 const createGrid = function (size) {
-  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
-  container.style.gridTemplateRows = `repeat(${size}, 1fr)`
-  console.log(size)
+  screen.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+  screen.style.gridTemplateRows = `repeat(${size}, 1fr)`
   for (i = 0; i < (size ** 2); i++) {
     div = document.createElement('div')
-    container.appendChild(div)
+    screen.appendChild(div)
     div.classList.add('grid-item')
   }
   addGridEvents()
 }
 
 const clearGrid = function () {
-  while (container.firstChild) {
-    container.removeChild(container.firstChild)
+  while (screen.firstChild) {
+    screen.removeChild(screen.firstChild)
   }
 }
 
@@ -26,11 +25,12 @@ const randRGB = function () {
 }
 
 const changeColor = function () {
+  colorPicker.jscolor.hide()
   // manual color selection
   if (colorPicker.getAttribute('data-current-color') !== 'FFFFFF') {
     const newColor = colorPicker.getAttribute('data-current-color')
-    console.log(newColor, colorPicker.getAttribute('data-current-color'))
     this.style.background = `${newColor}`
+    colorPicker.jscolor.value = 'FFAFFA'
   } else {
     // random color
     this.style.background = `rgb(${randRGB()}, ${randRGB()}, ${randRGB()})`
@@ -38,6 +38,7 @@ const changeColor = function () {
 }
 
 const addGridEvents = function () {
+  jscolor.hide()
   let gridItems = document.querySelectorAll('.grid-item')
   gridItems.forEach(item => item.addEventListener('mouseover', changeColor))
 }

@@ -3,15 +3,31 @@
 }
 
 .container {
-    display: grid;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     height: 40rem;
-    width: 60rem;
-    border: 1px solid blue;
+    width: 65rem;
+    background-color: rgb(202, 11, 11);
+    padding-top: 5rem;
+    border-radius: 5rem;
+}
+
+.screen {
+    display: grid;
+    height: 30rem;
+    width: 50rem;
+    margin-bottom: 2rem;
 }
 
 .grid-item {
     border: 1px red solid;
-    background-color: brown;
+    background-color: gray;
+    width: auto;
+}
+
+.grid-item:nth-last-child() {
+    background-color: black;
 }
 
 #slider {
@@ -33,4 +49,34 @@
     height: 2rem;
     width: 2rem;
     border-radius: 2rem;
+}
+
+#rainbow-container {
+    display: flex;
+    background-color: gray;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 2rem;
+    border: 0.1rem solid rgb(145, 145, 145)
+}
+
+#rainbow-toggle {
+    width: 50%;
+    height: 100%;
+    background: whitesmoke;
+    border-radius: 2rem;
+}
+
+.knob {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    background-color: whitesmoke;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
 }
