@@ -34,7 +34,7 @@
     -webkit-appearance: none;
     width: 20rem;
     height: 2rem;
-    background-color: rgb(94, 255, 0);
+    background-color: #bdbdbd;
     border-radius: 2rem;
 
 }
@@ -45,26 +45,28 @@
 
 #slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: red;
+    background: #ffb700;
     height: 2rem;
     width: 2rem;
+    border: 1px solid #bdbdbd;
     border-radius: 2rem;
 }
 
 #rainbow-container {
     display: flex;
-    background-color: gray;
+    align-items: center;
+    background-color: #bdbdbd;
     width: 4rem;
     height: 2rem;
     border-radius: 2rem;
-    border: 0.1rem solid rgb(145, 145, 145)
 }
 
 #rainbow-toggle {
-    width: 50%;
-    height: 100%;
-    background: whitesmoke;
+    width: 45%;
+    height: 90%;
+    background: #ffb700;
     border-radius: 2rem;
+    border: 2px solid #bdbdbd;
 }
 
 .knob {
