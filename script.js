@@ -1,6 +1,8 @@
 const slider = document.querySelector('#slider')
 const screen = document.querySelector('.screen')
 const rainbow = document.querySelector('.rainbow-container')
+const clear = document.querySelector('#clear')
+const gridSize = document.querySelector('#grid-size')
 
 let div
 const createGrid = function (size) {
@@ -11,13 +13,14 @@ const createGrid = function (size) {
     screen.appendChild(div)
     div.classList.add('grid-item')
   }
+  gridSize.textContent = `${size}x${size}`
   addGridEvents()
 }
 
 const clearGrid = function () {
-  while (screen.firstChild) {
-    screen.removeChild(screen.firstChild)
-  }
+  document.querySelectorAll('.grid-item').forEach(item => {
+    item.style.background = 'rgb(170, 170, 170)'
+  })
 }
 
 // randomize color on hover
@@ -33,7 +36,7 @@ const changeColor = function () {
   } else {
     // random color
     this.style.background = `rgb(${randRGB()}, ${randRGB()}, ${randRGB()})`
-    colorPicker.setAttribute('data-current-color') === 'FFFFFF'
+    colorPicker.setAttribute('data-current-color', 'FFFFFF')
   }
 }
 
@@ -53,13 +56,16 @@ createGrid(50)
 const colorPicker = document.querySelector('#color-picker')
 
 jscolor.install()
-colorPicker.jscolor.onChange = addGridEvents
+const noRainbow = function () {
+  rainbow.classList.remove('active')
+  addGridEvents()
+}
+colorPicker.jscolor.onChange = noRainbow
 
 const sliderToggle = function () {
   this.classList.toggle('active')
-  if (this.classList.includes('active')) {
-
-  }
 }
 
 rainbow.addEventListener('click', sliderToggle)
+
+clear.addEventListener('click', clearGrid)

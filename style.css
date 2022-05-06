@@ -8,7 +8,7 @@
     flex-direction: column;
     height: 40rem;
     width: 65rem;
-    background-color: rgb(202, 11, 11);
+    background-color: rgb(173, 10, 10);
     padding-top: 5rem;
     border-radius: 5rem;
 }
@@ -21,13 +21,8 @@
 }
 
 .grid-item {
-    border: 1px red solid;
-    background-color: gray;
+    background-color: rgb(170, 170, 170);
     width: auto;
-}
-
-.grid-item:nth-last-child() {
-    background-color: black;
 }
 
 #slider {
@@ -36,7 +31,7 @@
     height: 2rem;
     background-color: #bdbdbd;
     border-radius: 2rem;
-
+    margin:0;
 }
 
 #slider::-webkit-slider-runnable-track {
@@ -87,4 +82,21 @@
     display: flex;
     justify-content: flex-end;
     background-color: green;
+}
+
+.control-container {
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.control-container > h3 {
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+#clear, #color-picker {
+    height: 2rem;
 }
